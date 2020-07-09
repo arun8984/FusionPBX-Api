@@ -45,9 +45,9 @@ if ($extension == null and $domain_uuid !== null) {
     $sql = "select extension_uuid,domain_uuid,extension,effective_caller_id_name,effective_caller_id_number,outbound_caller_id_name,outbound_caller_id_number from v_extensions where domain_uuid = '$domain_uuid' ";
     $prep_statement = $db->prepare(check_sql($sql));
     $prep_statement->execute();
-    $extensions = $prep_statement->fetchAll(PDO::FETCH_NAMED);
+    $result = $prep_statement->fetchAll(PDO::FETCH_NAMED);
     unset($sql);
-    $message = $extensions;
+    $message = $result;
 }
 
 /*Show an single extension under a specific domain*/
@@ -56,9 +56,9 @@ if ($extension !== null and $domain_uuid !== null) {
     $sql .= "where domain_uuid = '$domain_uuid' and extension = '$extension'";
     $prep_statement = $db->prepare(check_sql($sql));
     $prep_statement->execute();
-    $extension = $prep_statement->fetchAll(PDO::FETCH_NAMED);
+    $result = $prep_statement->fetchAll(PDO::FETCH_NAMED);
     unset($sql);
-    $message = $extension;
+    $message = $result;
 }
 
 if ($extension !== null and $domain_uuid !== null and $password !== null) {
@@ -67,9 +67,9 @@ if ($extension !== null and $domain_uuid !== null and $password !== null) {
     $sql .= "where domain_uuid = '$domain_uuid' and extension = '$extension' and password = '$password'";
     $prep_statement = $db->prepare(check_sql($sql));
     $prep_statement->execute();
-    $extension = $prep_statement->fetchAll(PDO::FETCH_NAMED);
+    $result = $prep_statement->fetchAll(PDO::FETCH_NAMED);
     unset($sql);
-    $message = $extension;
+    $message = $result;
 }
 
 echo(json_encode($message));
