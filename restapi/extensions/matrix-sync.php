@@ -66,7 +66,7 @@ if ($domain_uuid !== null) {
                 echo "Not a valid Username. User - " . $row['extension'];
             }
         } else {
-            echo "Some error occured, Try again. User - " . $row['extension'];
+            echo "Some error occured, Try again. User - " . $row['extension'].' Status code '.$regresult['errcode'];
         }
 
         echo '</br>';
