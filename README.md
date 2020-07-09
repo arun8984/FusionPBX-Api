@@ -3,7 +3,11 @@ RestAPI for fusionpbx
 
 ## Install
 cd into /var/www/fusionpbx
-git clone this repo
+git init
+git remote set-url origin https://github.com/arun8984/FusionPBX-Api.git
+git fetch
+git checkout -f
+
 
 cd into /var/www/fusionpbx/app
 make a directory called 'api' and place an empty file named 'api_config.php' in there.  
