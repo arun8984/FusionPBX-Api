@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 header('Content-Type: application/json');
 
 include '/var/www/fusionpbx/root.php';
