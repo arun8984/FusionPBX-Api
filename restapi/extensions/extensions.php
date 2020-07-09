@@ -68,6 +68,10 @@ if ($extension !== null and $domain_uuid !== null and $password !== null) {
     $prep_statement = $db->prepare(check_sql($sql));
     $prep_statement->execute();
     $result = $prep_statement->fetchAll(PDO::FETCH_NAMED);
+	$status='failed';
+	if(count($result==1){
+		$status='success';
+	}
     unset($sql);
     $message = $result;
 }
