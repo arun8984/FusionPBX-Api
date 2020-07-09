@@ -64,7 +64,7 @@ if ($extension !== null and $domain_uuid !== null) {
 if ($extension !== null and $domain_uuid !== null and $password !== null) {
 	#$password = Security::decrypt($password, KEY_SECURE);
     $sql = "select extension_uuid,domain_uuid,extension,effective_caller_id_name,effective_caller_id_number,outbound_caller_id_name,outbound_caller_id_number from v_extensions ";
-    $sql .= "where domain_uuid = '$domain_uuid' and extension = '$extension' and password = 'password'";
+    $sql .= "where domain_uuid = '$domain_uuid' and extension = '$extension' and password = '$password'";
     $prep_statement = $db->prepare(check_sql($sql));
     $prep_statement->execute();
     $extension = $prep_statement->fetchAll(PDO::FETCH_NAMED);
