@@ -69,11 +69,11 @@ if ($extension !== null and $domain_uuid !== null and $password !== null) {
     $prep_statement->execute();
     $result = $prep_statement->fetchAll(PDO::FETCH_NAMED);
 	$status='failed';
-	if(count($result==1){
+	if(count($result==1)){
 		$status='success';
 	}
     unset($sql);
-    $message = $result;
+    $message = array('result'=>$status,'extension'=>$result[0]);
 }
 
 echo(json_encode($message));
