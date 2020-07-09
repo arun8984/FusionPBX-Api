@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 
 include '/var/www/fusionpbx/root.php';
 require_once '/var/www/fusionpbx/resources/check_auth.php';
-include 'security.php';
+#include 'security.php';
 
 $domain_uuid = (isset($_GET['domain_uuid']) ? $_GET['domain_uuid']:null);
 $extension = (isset($_GET['extension']) ? $_GET['extension']:null);
@@ -62,7 +62,7 @@ if ($extension !== null and $domain_uuid !== null) {
 }
 
 if ($extension !== null and $domain_uuid !== null and $password !== null) {
-	$password = Security::decrypt($password, KEY_SECURE);
+	#$password = Security::decrypt($password, KEY_SECURE);
     $sql = "select extension_uuid,domain_uuid,extension,effective_caller_id_name,effective_caller_id_number,outbound_caller_id_name,outbound_caller_id_number from v_extensions ";
     $sql .= "where domain_uuid = '$domain_uuid' and extension = '$extension' and password = 'password'";
     $prep_statement = $db->prepare(check_sql($sql));
