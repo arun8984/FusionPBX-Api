@@ -70,7 +70,7 @@ if ($domain_uuid !== null) {
         }
 
         echo '</br>';
-        sleep(3);
+        sleep(1);
     }
 }
 
