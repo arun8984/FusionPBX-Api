@@ -2,7 +2,7 @@
 include '/var/www/fusionpbx/root.php';
 require_once '/var/www/fusionpbx/resources/check_auth.php';
 #include 'security.php';
-
+set_time_limit(3600);
 $domain_uuid = (isset($_GET['domain_uuid']) ? $_GET['domain_uuid'] : null);
 $baseUrl = 'http://67.227.23.249/';
 if ($domain_uuid !== null) {
@@ -70,7 +70,7 @@ if ($domain_uuid !== null) {
         }
 
         echo '</br>';
-        sleep(3)
+        sleep(3);
     }
 }
 
