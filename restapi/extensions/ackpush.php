@@ -6,7 +6,7 @@ set_time_limit(3600);
 $msgid = (isset($_GET['msgid']) ? $_GET['msgid'] : null);
 if ($msgid !== null) {
 
-    $sql = "UPDATE pushmsg set ack = :ack where msgid = :msgid";
+    $sql = "UPDATE pushmsg set ack = 1 where msgid = :msgid";
 
     $prep_statement = $db->prepare($sql);
     $prep_statement->execute(['msgid' => $msgid]);
