@@ -13,7 +13,8 @@ class FCM
         if ($device_type == "android") {
             $fields = array(
                 'to' => $registatoin_ids,
-                'data' => $notification
+                'data' => $notification,
+				'priority' => 'high'
             );
         } else {
             $fields = array(
